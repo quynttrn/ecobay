@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Admin - Thống kê </title>
+    <link rel="stylesheet" href="styleadmin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="css/appadmintk.css">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+    
+        canvas {
+          max-width: 600px;
+          margin-bottom: 20px;
+        }
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px; /* Optional: Thêm khoảng cách giữa bảng và các phần tử khác */
+        
+      }
+  
+      th, td {
+        border: 0px;
+        padding: 8px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-q-plus-plus'></i>
+      <span class="logo_name">Quản trị viên</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin-tongquan.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Tổng quan</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-sanpham.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name" >Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-khuyenmai.html">
+            <i class='bx bx-list-ul'></i>
+            <span class="links_name">Khuyến mãi</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-thongke.html" class="active" >
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="index.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <!--====== Bắt đầu   ======-->
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Thống kê</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/DieuNguyet.jpg" alt="">
+        <span class="admin_name">Diệu Nguyệt</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <!--====== Kết thúc  ======-->
+    <br>
+    <br>
+    <br>    
+    <br>
+    <br>
+    <br>
+
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <div class="overview-boxes" style="text-align: center;">
+              <div class="box" style="width: 300px;">
+                <div class="right-side">
+                  <div class="box-topic">Top sản phẩm bán chạy tháng 12/2023</div>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="overview-boxes" style="text-align: center;">
+              <div class="box" style="width: 300px;">
+                <div class="right-side">
+                  <div class="box-topic">Số liệu 12/2023</div>
+                </div>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td>
+      <canvas id="productChart1" width="90" height="50"></canvas>
+    </td>
+    <td>
+      <canvas id="productChart2" width="90" height="50"></canvas>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+  <script>
+    var ctx = document.getElementById('productChart1').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Hạt quả hạch Brazil hữu cơ 100g Reformhaus', 'Trà dưỡng sinh Kombucha hữu cơ 400ml', 'Sữa gạo nguyên chất hữu cơ 200ml ProBios', 'Sữa bột hạnh nhân hữu cơ không đường Ecomil 400g', 'Nồi áp suất tiết kiệm năng lượng'],
+        datasets: [{
+          label: 'Số lượng',
+          data: [32, 50, 0, 46, 106],
+          backgroundColor: 'rgba(93, 175, 135, 0.5)',
+          borderColor: 'rgba(93, 175, 135, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        x: {
+          barPercentage: 0.01, // Điều chỉnh chiều rộng của cột
+          categoryPercentage: 0.03 // Điều chỉnh chiều rộng của nhóm cột
+        }
+      }
+    }
+  });
+  </script>
+
+<script>
+  var ctx = document.getElementById('productChart2').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Đang chờ giao hàng', 'Đã bán', 'Đã xóa', 'Hoàn trả', 'Tồn kho'],
+      datasets: [{
+        label: 'Số lượng',
+        data: [320, 1050, 0, 52, 106],
+        backgroundColor: 'rgba(192, 129, 154, 0.5)',
+        borderColor: 'rgba(192, 129, 154, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        },
+      x: {
+        barPercentage: 0.01, // Điều chỉnh chiều rộng của cột
+        categoryPercentage: 0.03 // Điều chỉnh chiều rộng của nhóm cột
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

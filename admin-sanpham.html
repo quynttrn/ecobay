@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Admin </title>
+    <link rel="stylesheet" href="styleadmin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Sử dụng thư viện Font Awesome để có biểu tượng bút -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="css/appadmin.css">
+     <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px; /* Optional: Thêm khoảng cách giữa bảng và các phần tử khác */
+        
+      }
+  
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+      .check{
+        font-size: 11px;
+        color: gray;
+      }
+      .pen-icon {
+      color: gray; /* Màu của biểu tượng */
+      text-decoration: underline;
+      cursor: pointer; /* Nhìn chuột trên biểu tượng */
+      }
+      
+    </style>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-q-plus-plus'></i>
+      <span class="logo_name">Quản trị viên</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin-tongquan.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Tổng quan</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-sanpham.html" class="active">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-khuyenmai.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Khuyến mãi</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-thongke.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="index.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <!--====== Bắt đầu - Tổng quan ======-->
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Sản phẩm</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/DieuNguyet.jpg" alt="">
+        <span class="admin_name">Diệu Nguyệt</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">
+            Tất cả sản phẩm
+          </div>
+          <div class="button">
+            <a href="#">Thêm</a>
+          </div>
+          <br>
+          <!--Tạo bảng tất cả sản phẩm-->
+          <table>
+            <thead>
+              <tr>
+                <th>Chọn</th>
+                <th>Tên sản phẩm</th>
+                <th>Kho</th>
+                <th>Giá</th>
+                <th>Tùy chỉnh</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td>Hạt quả hạch Brazil hữu cơ 100g Reformhaus <i class="fas fa-pen pen-icon"></i>
+                  <br>
+                  <span class="check">SKU: 00001</span>
+                </td>
+                <td>32 <i class="fas fa-pen pen-icon"></i></td>
+                <td>175.000đ - <del>200.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                <td>
+                  <div class="button">
+                  <a href="#">Chỉnh sửa</a>
+                  <a href="#">Xóa</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td> 
+                <td>Trà dưỡng sinh Kombucha hữu cơ 400ml <i class="fas fa-pen pen-icon"></i>
+                  <br>
+                  <span class="check">SKU: 00002</span>
+                </td>
+                <td>50 <i class="fas fa-pen pen-icon"></i></td>
+                <td>89.000đ - <del>100.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                <td>
+                  <div class="button">
+                  <a href="#">Chỉnh sửa</a>
+                  <a href="#">Xóa</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td>Sữa gạo nguyên chất hữu cơ 200ml ProBios <i class="fas fa-pen pen-icon"></i>
+                  <br>
+                  <span class="check">SKU: 00003</span>
+                </td>
+                <td>Hết hàng <i class="fas fa-pen pen-icon"></i></td>
+                <td>36.000đ - <del>100.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                <td>
+                  <div class="button">
+                  <a href="#">Chỉnh sửa</a>
+                  <a href="#">Xóa</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td>Sữa bột hạnh nhân hữu cơ không đường Ecomil 400g <i class="fas fa-pen pen-icon"></i>
+                  <br>
+                  <span class="check">SKU: 00004</span>
+                </td>
+                <td>46 <i class="fas fa-pen pen-icon"></i></td>
+                <td>445.000đ - <del>480.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                <td>
+                  <div class="button">
+                  <a href="#">Chỉnh sửa</a>
+                  <a href="#">Xóa</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td>Nồi áp suất tiết kiệm năng lượng <i class="fas fa-pen pen-icon"></i>
+                  <br>
+                  <span class="check">SKU: 00005</span>
+                </td>
+                <td>106</td>
+                <td>2.500.000đ - <del>3.000.000đ</del> <i class="fas fa-pen pen-icon"></i></td>
+                <td>
+                  <div class="button">
+                  <a href="#">Chỉnh sửa</a>
+                  <a href="#">Xóa</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!--Kết thúc - Tạo bảng tất cả sản phẩm-->
+          <div class="button">
+            <a href="#">Xem thêm</a></div><br>
+          <div class="title">Các sản phẩm bán chạy</div>
+            <div class="button">
+              <a href="#">Thêm</a>
+            </div><br>
+          <!--Tạo bảng sản phẩm bán chạy-->
+            <table>
+              <thead>
+                <tr>
+                  <th>Chọn</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Kho</th>
+                  <th>Giá</th>
+                  <th>Tùy chỉnh</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>Bột cacao hữu cơ 300g ProBios Organic Instant<i class="fas fa-pen pen-icon"></i>
+                    <br>
+                    <span class="check">SKU: 000015</span>
+                  </td>
+                  <td>55 <i class="fas fa-pen pen-icon"></i></td>
+                  <td>220.000đ - <del>250.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                  <td>
+                    <div class="button">
+                    <a href="#">Chỉnh sửa</a>
+                    <a href="#">Xóa</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                  </td> 
+                  <td>Bột tảo Spirulina hữu cơ Sottolestelle 200g <i class="fas fa-pen pen-icon"></i>
+                    <br>
+                    <span class="check">SKU: 000020</span>
+                  </td>
+                  <td>100 <i class="fas fa-pen pen-icon"></i></td>
+                  <td>480.000đ - <del>500.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                  <td>
+                    <div class="button">
+                    <a href="#">Chỉnh sửa</a>
+                    <a href="#">Xóa</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>Bơ hạt phỉ hazelnut hữu cơ Sottolestelle 200g <i class="fas fa-pen pen-icon"></i>
+                    <br>
+                    <span class="check">SKU: 000018</span>
+                  </td>
+                  <td>45 <i class="fas fa-pen pen-icon"></i></td>
+                  <td>289.000đ - <del>300.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                  <td>
+                    <div class="button">
+                    <a href="#">Chỉnh sửa</a>
+                    <a href="#">Xóa</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td>Hạt quả hạch brazil hữu cơ 100g Reformhaus <i class="fas fa-pen pen-icon"></i>
+                    <br>
+                    <span class="check">SKU: 00001</span>
+                  </td>
+                  <td>32 <i class="fas fa-pen pen-icon"></i></td>
+                  <td>175.000đ - <del>200.000đ <i class="fas fa-pen pen-icon"></i></del></td>
+                  <td>
+                    <div class="button">
+                    <a href="#">Chỉnh sửa</a>
+                    <a href="#">Xóa</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="button">
+              <a href="#">Xem thêm</a></div><br>
+          </div>
+          <!--Kết thúc - Tạo bảng tất cả sản phẩm-->
+      </div>
+    </div>
+  </section>
+<!--====== Kết thúc - Tổng quan ======-->
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>

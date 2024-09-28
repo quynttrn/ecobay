@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Admin </title>
+    <link rel="stylesheet" href="styleadmin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Sử dụng thư viện Font Awesome để có biểu tượng bút -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="css/appadminkm.css">
+     <style>
+
+        .superscript {
+            color: blue; /* Màu chữ xanh */
+            text-decoration: underline; /* Gạch chân */
+        }
+        .red-date {
+            color:red;
+        }
+
+        .fraction {
+            text-align: right;
+            color: red;
+        }
+
+        .horizontal-line {
+            border-top: 5px solid #2196F3; 
+            margin: 5px; 
+            border-radius: 5px;
+        }
+
+        .table-button {
+            background-color: green;
+            opacity: 30%;
+            padding: 8px 16px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        }
+
+        .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
+
+        .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        input:checked + .slider {
+        background-color: rgb(197, 231, 197);
+        }
+
+        input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        }
+
+        .slider.round {
+        border-radius: 34px;
+        }
+
+        .slider.round:before {
+        border-radius: 50%;
+        }
+      
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px; /* Optional: Thêm khoảng cách giữa bảng và các phần tử khác */
+        }
+  
+        th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        background-color: #f2f2f2;
+        }
+
+        .td-left {
+        text-align: left;
+        }
+
+        td {
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 8px;
+        }
+
+        .check{
+        font-size: 11px;
+        color: gray;
+        }
+
+        .pen-icon {
+        color: gray; /* Màu của biểu tượng */
+        text-decoration: underline;
+        cursor: pointer; /* Nhìn chuột trên biểu tượng */
+        }
+
+        .button-container {
+            display: flex; /* Sử dụng flexbox để căn chỉnh ngang hàng */
+        }
+
+        .styled-button {
+            display: inline-block;
+            padding: 10px 20px; /* Điều chỉnh độ rộng và chiều cao của nút */
+            margin-right: 5px;
+            background-color: #437146;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap; /* Ngăn chữ từ việc xuống dòng */
+        }
+    </style>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-q-plus-plus'></i>
+      <span class="logo_name">Quản trị viên</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin-tongquan.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Tổng quan</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-sanpham.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-khuyenmai.html" class="active">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Khuyến mãi</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-thongke.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <!--====== Bắt đầu - Tổng quan ======-->
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Khuyến mãi</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/DieuNguyet.jpg" alt="">
+        <span class="admin_name">Diệu Nguyệt</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Danh sách khuyến mãi</div>
+         
+          <div>
+            <span class="superscript"></span><tr>Tất cả <sup>(3)</sup> |</tr>
+            <span class="superscript"></span><tr>Đang hoạt động <sup>(3)</sup> |</tr>
+            <span class="superscript"></span><tr>Không hoạt động <sup>(0)</sup> |</tr>
+            <span class="superscript"></span><tr>Chờ duyệt <sup>(0)</sup> |</tr>
+            <span class="superscript"></span><tr>Vi phạm <sup>(0)</sup> |</tr>
+            <span class="superscript"></span><tr>Đã xóa <sup>(0)</sup></tr>
+            <div class="button"><a href="#">Thêm</a>
+          </div>
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th>Chọn</th>
+                <th>Mã giảm giá</th>
+                <th>Loại</th>
+                <th>Hiển thị</th>
+                <th>Tình trạng</th>
+                <th>Số lượt sử dụng</th>
+                <th>Hạn sử dụng</th>
+                <th>Tùy chỉnh</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="td-left">ECOBAY10 <i class="fas fa-pen pen-icon"></i>
+                <br>
+                  <span class="check">Giảm 10% với hóa đơn từ 1.000.000đ</span></td>
+                <td>Giảm giá đơn hàng</td>
+                <td><label class="switch"><input type="checkbox" checked>
+                    <span class="slider round"></span></label></td>
+                <td><button class="table-button">Đang khuyến mãi</td>
+                
+                <td>
+                    <div class="fraction-container">
+                        <div class="fraction" id="fraction">50/100</div>
+                        <div class="horizontal-line" id="line"></div>
+                    </div>
+                </td>
+                <td>25/10/2023 15:00 CH - <span class="red-date">31/12/2023 23:00 CH</span></td>
+                <td>
+                    <div class="button-container">
+                    <button class="styled-button"<a href="#">Chỉnh sửa</a></button>
+                    <button class="styled-button"<a href="#">Xóa</a></button></div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="td-left">BANMOI20 <i class="fas fa-pen pen-icon"></i>
+                <br>
+                  <span class="check">Giảm 20% với hóa đơn từ 0đ</span></td>
+                <td>Giảm giá đơn hàng</td>
+                <td><label class="switch"><input type="checkbox" checked>
+                    <span class="slider round"></span></label></td>
+                <td><button class="table-button">Đang khuyến mãi</td>
+                <td>
+                    <div class="fraction-container">
+                        <div class="fraction" id="fraction">100/<i class='fas fa-infinity'></i></div>
+                        <div class="horizontal-line" id="line"></div>
+                    </div>
+                </td>
+                <td>01/01/2023 10:47 SA - <span class="red-date">01/01/2024 00:00 CH</span></td>
+                <td>
+                    <div class="button-container">
+                    <button class="styled-button"<a href="#">Chỉnh sửa</a></button>
+                    <button class="styled-button"<a href="#">Xóa</a></button></div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="td-left">GIANGSINH23 <i class="fas fa-pen pen-icon"></i>
+                <br>
+                  <span class="check">Giảm 50% với hóa đơn từ 500.000đ tối đa 100.000đ</span></td>
+                <td>Giảm giá đơn hàng</td>
+                <td><label class="switch"><input type="checkbox" checked>
+                    <span class="slider round"></span></label></td>
+                <td><button class="table-button">Đang khuyến mãi</td>
+                <td>
+                    <div class="fraction-container">
+                        <div class="fraction" id="fraction">100/100</div>
+                        <div class="horizontal-line" id="line"></div>
+                    </div>
+                </td>
+                <td>01/11/2023 6:00 SA - <span class="red-date">25/12/2023 00:00 CH</span></td>
+                <td>
+                    <div class="button-container">
+                    <button class="styled-button"<a href="#">Chỉnh sửa</a></button>
+                    <button class="styled-button"<a href="#">Xóa</a></button></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+     
+          </ul>
+          
+          </div>
+          <div class="button">
+            <a href="#">Xem thêm</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+<!--====== Kết thúc - Tổng quan ======-->
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function() {
+    sidebar.classList.toggle("active");
+    if(sidebar.classList.contains("active")){
+    sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+    }else
+    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+
+    // Get the fraction element and the line element
+    const fractionElement = document.getElementById('fraction');
+        const lineElement = document.getElementById('line');
+
+        // Parse the numerator and denominator from the fraction text
+        const [numerator, denominator] = fractionElement.innerText.split('/').map(Number);
+
+        // Calculate the percentage and set the width of the line
+        const percentage = (numerator / denominator) * 100;
+        lineElement.style.width = `${percentage}%`;
+ </script>
+
+</body>
+</html>

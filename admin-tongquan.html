@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Admin </title>
+    <link rel="stylesheet" href="styleadmin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="css/appadmin.css">
+     <style>
+      .superscript{
+        position: relative;
+        vertical-align: baseline;
+        padding-left: 20px;
+      }
+      .tr :hover{
+        background-color:blue;
+      }
+      .superscript sup :hover {
+        background: blue;
+      }
+  
+      .superscript sup {
+        position: absolute;
+        top: -0.5em; /* Điều chỉnh giá trị này để đưa số lên cao hơn hoặc thấp hơn */
+        right: 0;
+        font-size: 0.8em; /* Điều chỉnh kích thước của số */
+        padding-left: 10px;
+      }
+      @media (max-width: 500px) {
+      /* Ẩn cột thứ ba khi màn hình nhỏ hơn hoặc bằng 500px */
+      .hide-third-column {
+        display: none;
+        font-size: 11px;
+      }
+    }
+    @media (max-width: 500px) {
+      /* Ẩn cột thứ 1 khi màn hình nhỏ hơn hoặc bằng 500px */
+      .hide-first-column {
+        display: none;
+        font-size: 11px;
+      }
+    }
+     </style>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-q-plus-plus'></i>
+      <span class="logo_name">Quản trị viên</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin-tongquan.html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Tổng quan</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-sanpham.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name" >Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-khuyenmai.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Khuyến mãi</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-thongke.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="index.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <!--====== Bắt đầu - Tổng quan ======-->
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Tổng quan</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/DieuNguyet.jpg" alt="">
+        <span class="admin_name">Diệu Nguyệt</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Tổng đơn hàng</div>
+            <div class="number">199</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Cập nhật 16/12/2023</span>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Tổng doanh thu</div>
+            <div class="number">20.000.000đ</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Cập nhật 16/12/2023</span>
+            </div>
+          </div>
+          <i class='bx bxs-cart-add cart two' ></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Tổng lợi nhuận</div>
+            <div class="number">1.000.000đ</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Cập nhật 16/12/2023</span>
+            </div>
+          </div>
+          <i class='bx bx-cart cart three' ></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Tổng đơn hoàn trả</div>
+            <div class="number">0</div>
+            <div class="indicator">
+              <i class='bx bx-down-arrow-alt down'></i>
+              <span class="text">Cập nhật 16/12/2023</span>
+            </div>
+          </div>
+          <i class='bx bxs-cart-download cart four' ></i>
+        </div>
+      </div>
+      <div>
+        <span class="superscript"></span><tr>Tất cả <sup>(10)</sup> |</tr>
+        <span class="superscript"></span><tr>Đang hoạt động <sup>(10)</sup> |</tr>
+        <span class="superscript"></span><tr>Không hoạt động <sup>(0)</sup> |</tr>
+        <span class="superscript"></span><tr>Chờ duyệt <sup>(2)</sup> |</tr>
+        <span class="superscript"></span><tr>Vi phạm <sup>(0)</sup> |</tr>
+        <span class="superscript"></span><tr>Đã xóa <sup>(0)</sup></tr>
+      </div>
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Đơn hàng gần đây</div>
+          <div class="sales-details">
+            <ul class="column hide-first-column">
+              <li class="topic">Thời gian</li>
+              <li><a href="#">18/11/2023</a></li>
+              <li><a href="#">11/11/2023</a></li>
+              <li><a href="#">30/10/2023</a></li>
+              <li><a href="#">19/10/2023</a></li>
+              <li><a href="#">12/10/2023</a></li>
+              <li><a href="#">09/10/2023</a></li>
+              <li><a href="#">07/10/2023</a></li>
+            </ul>
+            <ul class="details">
+            <li class="topic">Khách hàng</li>
+            <li><a href="#">Nguyễn Hoàng Minh</a></li>
+            <li><a href="#">Lê Thị Hồng Nga</a></li>
+            <li><a href="#">Phùng Hồ Minh Khuê</a></li>
+            <li><a href="#">Dương Nhu Mỹ</a></li>
+            <li><a href="#">Lê Thị Phương Anh</a></li>
+            <li><a href="#">Võ Nguyễn Anh Thy</a></li>
+            <li><a href="#">Nguyễn Minh Phương</a></li>
+     
+          </ul>
+          <ul class="column hide-third-column">
+            <li class="topic">Tình trạng đơn hàng</li>
+            <li><a href="#">Đã giao</a></li>
+            <li><a href="#">Đã giao</a></li>
+            <li><a href="#">Đã giao</a></li>
+            <li><a href="#">Đã giao</a></li>
+            <li><a href="#">Đã giao</a></li>
+            <li><a href="#">Đã giao</a></li>
+            <li><a href="#">Đã giao</a></li>
+          </ul>
+          <ul class="details">
+            <li class="topic">Tổng cộng</li>
+            <li><a href="#">1.520.000đ</a></li>
+            <li><a href="#">760.000đ</a></li>
+            <li><a href="#">890.000đ</a></li>
+            <li><a href="#">250.000đ</a></li>
+            <li><a href="#">440.000đ</a></li>
+            <li><a href="#">500.000đ</a></li>
+            <li><a href="#">390.000đ</a></li>
+          </ul>
+          </div>
+          <div class="button">
+            <a href="#">Xem thêm</a>
+          </div>
+        </div>
+        <div class="top-sales box">
+          <div class="title">Sản phẩm bán chạy</div>
+          <ul class="top-sales-details">
+            <li>
+            <a href="#">
+              <img src="images/product/Bột cacao hữu cơ 300g ProBios 220k.jpg" alt="">
+              <span class="product">Bột cacao hữu cơ 300g ProBios</span>
+            </a>
+            <span class="price">220.000đ</span>
+          </li>
+          <li>
+            <a href="#">
+               <img src="images/product/Bột tảo Spirulina hữu cơ Sottolestelle 200g – Organic Spirulina Powder 480k.jpg" alt="">
+              <span class="product">Bột tảo Spirulina hữu cơ Sottolestelle 200g – Organic Spirulina Powder</span>
+            </a>
+            <span class="price">480.000đ</span>
+          </li>
+          <li>
+            <a href="#">
+             <img src="images/product/Bơ hạt phỉ hazelnut hữu cơ Sottolestelle 200g – Organic Hazelnut Cream 289k.jpg" alt="">
+              <span class="product">Bơ hạt phỉ hazelnut hữu cơ Sottolestelle 200g – Organic Hazelnut Cream</span>
+            </a>
+            <span class="price">289.000đ</span>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/product/Hạt quả hạch brazil hữu cơ 100g Reformhaus 175K.jpg" alt="">
+              <span class="product">Hạt quả hạch brazil hữu cơ 100g Reformhaus</span>
+            </a>
+            <span class="price">175.000đ</span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--====== Kết thúc - Tổng quan ======-->
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>
